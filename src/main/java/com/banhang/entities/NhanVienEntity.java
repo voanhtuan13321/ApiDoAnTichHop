@@ -10,14 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "khachhang")
-public class KhachHangEntity {
+@Table(name = "nhanvien")
+public class NhanVienEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "hoten", columnDefinition = "varchar(50)")
+	@Column(name =" hoten", columnDefinition = "varchar(50)")
 	private String hoTen;
 	
 	@Column(name = "ngaysinh", columnDefinition = "datetime")
@@ -29,27 +29,23 @@ public class KhachHangEntity {
 	@Column(columnDefinition = "varchar(12)")
 	private String cccd;
 	
-	@Column(name = "diachi", columnDefinition = "varchar(100)")
-	private String diaChi;
-	
 	@Column(name = "taikhoan", columnDefinition = "varchar(50)")
 	private String taiKhoan;
 	
 	@Column(name = "matkhau", columnDefinition = "varchar(50)")
 	private String matKhau;
 
-	public KhachHangEntity() {
+	public NhanVienEntity() {
 		super();
 	}
 
-	public KhachHangEntity(String hoTen, Date ngaySinh, String soDienThoai, String cccd, String diaChi, String taiKhoan,
+	public NhanVienEntity(String hoTen, Date ngaySinh, String soDienThoai, String cccd, String taiKhoan,
 			String matKhau) {
 		super();
 		this.hoTen = hoTen;
 		this.ngaySinh = ngaySinh;
 		this.soDienThoai = soDienThoai;
 		this.cccd = cccd;
-		this.diaChi = diaChi;
 		this.taiKhoan = taiKhoan;
 		this.matKhau = matKhau;
 	}
@@ -92,14 +88,6 @@ public class KhachHangEntity {
 
 	public void setCccd(String cccd) {
 		this.cccd = cccd;
-	}
-
-	public String getDiaChi() {
-		return diaChi;
-	}
-
-	public void setDiaChi(String diaChi) {
-		this.diaChi = diaChi;
 	}
 
 	public String getTaiKhoan() {
