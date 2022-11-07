@@ -1,4 +1,4 @@
-package com.banhang.repositoriess;
+package com.banhang.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

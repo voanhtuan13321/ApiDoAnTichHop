@@ -1,4 +1,4 @@
-package com.banhang.repositoriess;
+package com.banhang.repositories;
 
 import java.util.List;
 

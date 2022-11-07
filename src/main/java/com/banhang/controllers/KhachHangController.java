@@ -11,35 +11,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.banhang.models.UuDai;
 import com.banhang.models.ResponObject;
-import com.banhang.services.IUuDaiService;
+import com.banhang.models.KhachHang;
+import com.banhang.services.IKhachHangService;
 
 @CrossOrigin
 @RestController
-@RequestMapping(path = "/api/v1/uudai")
-public class UuDaiController {
+@RequestMapping(path = "/api/v1/khachhang")
+public class KhachHangController {
 
 	@Autowired
-	private IUuDaiService uuDaiService;
-	
-	@GetMapping()
-	public ResponseEntity<ResponObject> getAllUuDai() {
-		return uuDaiService.getAllUuDai();
-	}
+	private IKhachHangService khachHangService;
 	
 	@GetMapping(path = "/{id}")
-	public ResponseEntity<ResponObject> getUuDaiById(@PathVariable Long id) {
-		return uuDaiService.getUuDaiById(id);
+	public ResponseEntity<ResponObject> getKhachHangById(@PathVariable Long id) {
+		return khachHangService.getKhachHangById(id);
 	}
 	
 	@PostMapping
-	public ResponseEntity<ResponObject> insertUuDai(@RequestBody UuDai UuDai) {
-		return uuDaiService.insertUuDai(UuDai);
+	public ResponseEntity<ResponObject> insertKhachHang(@RequestBody KhachHang KhachHang) {
+		return khachHangService.insertKhachHang(KhachHang);
 	}
 	
 	@DeleteMapping(path = "/{id}")
-	public ResponseEntity<ResponObject> deleteUuDai(@PathVariable Long id) {
-		return uuDaiService.deleteUuDai(id);
+	public ResponseEntity<ResponObject> deleteKhachHang(@PathVariable Long id) {
+		return khachHangService.deleteKhachHang(id);
+	}
+	
+	@GetMapping(path = "/dangnhap")
+	public ResponseEntity<ResponObject> checkDangNhap(@RequestBody KhachHang khachHang) {
+		return khachHangService.checkDangNhap(khachHang);
 	}
 }

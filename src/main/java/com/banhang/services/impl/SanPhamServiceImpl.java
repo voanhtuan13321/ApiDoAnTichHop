@@ -12,9 +12,9 @@ import com.banhang.entities.NhanVienEntity;
 import com.banhang.entities.SanPhamEntity;
 import com.banhang.models.ResponObject;
 import com.banhang.models.SanPham;
-import com.banhang.repositoriess.IDanhMucRepository;
-import com.banhang.repositoriess.INhanVienRepository;
-import com.banhang.repositoriess.ISanPhamRepository;
+import com.banhang.repositories.IDanhMucRepository;
+import com.banhang.repositories.INhanVienRepository;
+import com.banhang.repositories.ISanPhamRepository;
 import com.banhang.services.ISanPhamService;
 
 @Service
@@ -22,13 +22,11 @@ public class SanPhamServiceImpl implements ISanPhamService {
 
 	@Autowired
 	private ISanPhamRepository sanPhamRepository;
-	
 	@Autowired
 	private INhanVienRepository nhanVienRepository;
-	
 	@Autowired
 	private IDanhMucRepository danhMucRepository;
-
+	
 	@Override
 	public ResponseEntity<ResponObject> getAllSanPham() {
 		// TODO lay toan bo thong tin san pham
@@ -74,6 +72,7 @@ public class SanPhamServiceImpl implements ISanPhamService {
 		else {
 			newSanPhamEntity = sanPhamRepository.findById(sanPham.getId()).get();
 		}
+		
 		newSanPhamEntity.setTenSanPham(sanPham.getTenSanPham());
 		newSanPhamEntity.setAnh(sanPham.getAnh());
 		newSanPhamEntity.setMoTa(sanPham.getMoTa());

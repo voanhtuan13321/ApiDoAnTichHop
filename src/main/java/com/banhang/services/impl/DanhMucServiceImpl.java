@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.banhang.entities.DanhMucEntity;
 import com.banhang.models.DanhMuc;
 import com.banhang.models.ResponObject;
-import com.banhang.repositoriess.IDanhMucRepository;
+import com.banhang.repositories.IDanhMucRepository;
 import com.banhang.services.IDanhMucService;
 
 @Service
