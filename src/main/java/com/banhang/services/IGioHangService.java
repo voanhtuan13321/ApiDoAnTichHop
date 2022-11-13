@@ -13,4 +13,6 @@ public interface IGioHangService {
 
 	ResponseEntity<ResponObject> updateGioHang(GioHang gioHang);
 
+	ResponseEntity<ResponObject> deleteGioHang(Long id);
+
 }

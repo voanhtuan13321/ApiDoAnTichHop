@@ -44,7 +44,6 @@ public class GioHangServiceImpl implements IGioHangService {
 		KhachHangEntity khachHangEntity = khachHangRepository.findById(gioHang.getIdKhachHang()).get();
 		
 		int countBySanPhamAndKhachHang = gioHangRepository.countBySanPhamAndKhachHang(sanPhamEntity, khachHangEntity);
-		System.out.println(countBySanPhamAndKhachHang);
 		GioHangEntity gioHangEntity;
 		if (countBySanPhamAndKhachHang == 0) {
 			// them moi
@@ -61,7 +60,7 @@ public class GioHangServiceImpl implements IGioHangService {
 		return ResponseEntity.status(HttpStatus.OK)
 				.body(new ResponObject(
 						"OK",
-						"Cap nhat thang cong",
+						"Cap nhat thanh cong",
 						gioHangRepository.save(gioHangEntity)));
 	}
 
@@ -82,9 +81,20 @@ public class GioHangServiceImpl implements IGioHangService {
 			return ResponseEntity.status(HttpStatus.OK)
 					.body(new ResponObject(
 							"OK",
-							"Cap nhat thang cong",
+							"Cap nhat thanh cong",
 							gioHangRepository.save(gioHangEntity)));
 		}
+	}
+
+	@Override
+	public ResponseEntity<ResponObject> deleteGioHang(Long id) {
+		// TODO xoa san pham khoi gio hang
+		gioHangRepository.deleteById(id);
+		return ResponseEntity.status(HttpStatus.OK)
+				.body(new ResponObject(
+						"OK",
+						"xoa thanh cong",
+						""));
 	}
 	
 	

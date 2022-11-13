@@ -40,7 +40,7 @@ public class GioHangController {
 	}
 	
 	@DeleteMapping(path = "/{id}")
-	public ResponseEntity<ResponObject> deleteGioHang(@RequestBody GioHang gioHang) {
-		return gioHangService.insertGioHang(gioHang);
+	public ResponseEntity<ResponObject> deleteGioHang(@PathVariable Long id) {
+		return gioHangService.deleteGioHang(id);
 	}
 }
