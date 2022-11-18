@@ -38,7 +38,7 @@ public class KhachHangController {
 		return khachHangService.deleteKhachHang(id);
 	}
 	
-	@GetMapping(path = "/dangnhap")
+	@PostMapping(path = "/dangnhap")
 	public ResponseEntity<ResponObject> checkDangNhap(@RequestBody KhachHang khachHang) {
 		return khachHangService.checkDangNhap(khachHang);
 	}

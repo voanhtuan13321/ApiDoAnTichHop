@@ -10,4 +10,5 @@ public interface IKhachHangRepository extends JpaRepository<KhachHangEntity, Lon
 
 	Optional<KhachHangEntity> findByTaiKhoanAndMatKhau(String taiKhoan, String matKhau);
 	
+	Optional<KhachHangEntity> findByTaiKhoan(String taiKhoan);
 }

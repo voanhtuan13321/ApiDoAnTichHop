@@ -1,49 +1,22 @@
-package com.banhang.entities;
+package com.banhang.models;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+public class NhanVien {
 
-@Entity
-@Table(name = "nhanvien")
-public class NhanVienEntity {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(name =" hoten", columnDefinition = "varchar(50)")
 	private String hoTen;
-	
-	@Column(name = "ngaysinh", columnDefinition = "datetime")
 	private Date ngaySinh;
-	
-	@Column(name = "sodienthoai", columnDefinition = "varchar(10)")
 	private String soDienThoai;
-	
-	@Column(columnDefinition = "varchar(12)")
 	private String cccd;
-	
-	@Column(name = "taikhoan", columnDefinition = "varchar(50)")
 	private String taiKhoan;
-	
-	@Column(name = "matkhau", columnDefinition = "varchar(50)")
 	private String matKhau;
-	
-	@Column(columnDefinition = "longtext")
-	private String anh;
 
-	public NhanVienEntity() {
+	public NhanVien() {
 		super();
 	}
 
-	public NhanVienEntity(String hoTen, Date ngaySinh, String soDienThoai, String cccd, String taiKhoan,
-			String matKhau, String anh) {
+	public NhanVien(String hoTen, Date ngaySinh, String soDienThoai, String cccd, String taiKhoan, String matKhau) {
 		super();
 		this.hoTen = hoTen;
 		this.ngaySinh = ngaySinh;
@@ -51,7 +24,6 @@ public class NhanVienEntity {
 		this.cccd = cccd;
 		this.taiKhoan = taiKhoan;
 		this.matKhau = matKhau;
-		this.anh = anh;
 	}
 
 	public Long getId() {
@@ -108,14 +80,6 @@ public class NhanVienEntity {
 
 	public void setMatKhau(String matKhau) {
 		this.matKhau = matKhau;
-	}
-
-	public String getAnh() {
-		return anh;
-	}
-
-	public void setAnh(String anh) {
-		this.anh = anh;
 	}
 
 }

@@ -40,6 +40,13 @@ public class KhachHangServiceImpl implements IKhachHangService {
 		}
 		// truong hop them moi
 		else {
+			if (khachHangRepository.findByTaiKhoan(khachHang.getTaiKhoan()).isPresent()) {
+				return ResponseEntity.status(HttpStatus.CONTINUE)
+						.body(new ResponObject(
+								"Faild", 
+								"Da ton tai ten tai khoan",
+								""));
+			}
 			khachHangEntity = new KhachHangEntity();
 		}
 		
